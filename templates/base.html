@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
     {# https redirect #}
@@ -17,7 +17,7 @@
     <meta name="author" content="{{ AUTHOR }}" />
     <meta name="robots" content="index, follow"/>
     <meta name="keywords" content="{% block keywords %}{{ KEYWORDS }}{%endblock%}" />
-
+    {% block extra_meta %}{% endblock %}
     <meta property="og:title" content="{% block ogtitle %}{{ SITENAME }}{%endblock%}"/>
     <meta property="og:url" content="{% block ogurl %}{{ SITEURL }}{%endblock%}"/>
     <meta property="og:site_name" content="{{ SITENAME }}"/>
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/paginator.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/social-likes_flat.css" />
@@ -39,6 +40,8 @@
     <script type="text/javascript" src="/theme/js/jquery.min.js"></script>
     <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/theme/js/social-likes.min.js"></script>
+
+    {% block script %}{% endblock %}
 
     {% if SHARETHIS_PUB_KEY %}
     <script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
@@ -81,9 +84,9 @@
 
     <div class="footer">
         <div class="container">
-            <p>This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
-            <p><a href="http://github.com/samael500/w3-personal-blog/">W3 Personal Blog</a> is a flat <a href="http://getbootstrap.com/">bootstrap</a> responsive theme designed by <a href="https://w3layouts.com/personal-blog-a-blogging-category-flat-bootstrap-responsive-web-template/">W3layouts</a> ported to a pelican by <a href="http://samael500.github.io/">Samael500</a>.<p>
-            <p>Copyrights © 2015 {{ SITENAME }} All rights reserved.</p>
+            <p>
+              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="/img/CC-BY-4.0.png" /></a>This work is <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> licensed.
+            </p>
         </div>
     </div>
 

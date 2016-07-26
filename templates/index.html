@@ -64,6 +64,17 @@
         </ul>
     </div>
 
+    {% if PAGES %}
+        <div class="side-links">
+            <h3>{{ PAGES_TEXT|default('Pages') }}</h3>
+            <ul class="fa-ul">
+                {% for pa in PAGES %}
+                    <li><a href="{{ pa.url }}"><i class="fa-li fa fa-internal-link"></i>{{ pa.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
     {% if LINKS %}
         <div class="side-links">
             <h3>{{ LINKS_TEXT|default('Links') }}</h3>

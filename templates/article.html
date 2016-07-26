@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block extra_meta %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Sp1l" />
+{% endblock %}
 {% block title %}{{ article.title|striptags }} | {{ SITENAME }}{% endblock %}
 {% block keywords %}article{% for tag in article.tags %}, {{ tag }}{% endfor %}{%endblock%}
 
@@ -14,6 +18,7 @@
 {% block extra_head %}
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/tree.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/anchorific.css" />
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/codehilite.css" />
     <script type="text/javascript" src="{{ SITEURL }}/theme/js/anchorific.js"></script>
 {% endblock %}
 
@@ -36,6 +41,12 @@
                 <span class='st_facebook_hcount' displayText='Facebook'></span>
                 <span class='st_twitter_hcount' displayText='Tweet'></span>
             </div>
+            {% endif %}
+
+            <p>{{ article.summary }}</p>
+
+            {% if article.image is defined %}
+            <p><img src="{{ article.image }}" alt="{{ article.title|striptags }}"/></p>
             {% endif %}
 
             {{ article.content }}

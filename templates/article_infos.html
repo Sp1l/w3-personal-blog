@@ -1,6 +1,9 @@
 <h4>
     <a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
-    {{ article.date.strftime('%b %d, %Y')|capitalize }}
+    {{ article.date.strftime('%d %b %Y')|capitalize }}
+    {% if article.modified %}
+       | Last updated: {{ article.modified.strftime('%d %b %Y %H:%M')|capitalize }}
+    {% endif %}
 </h4>
 
 <div class="footer art-info">
